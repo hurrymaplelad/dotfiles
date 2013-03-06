@@ -1,0 +1,56 @@
+#
+# Configs
+#
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+# Window Hints
+config windowHintsIgnoreHiddenWindows false
+config windowHintsShowIcons true
+config windowHintsSpread true
+config windowHintsRoundedCornerSize 5
+config windowHintsFontSize true
+
+# Monitor Aliases
+alias mon-laptop      1440x1050
+
+# Favorite Dimensions
+alias goldenWidth screenSizeX*3/5
+alias goldenCorner ${goldenWidth};screenSizeY/2
+
+# Layout
+# layout 1monitor 'Terminal':SORT_TITLE,REPEAT                ${1-main}
+# layout 1monitor 'Google Chrome':REPEAT                   ${1-main}
+# layout 1monitor 'MacVim':REPEAT                          ${1-main}
+# layout 1monitor 'Submlime Text 2':REPEAT                    ${1-main}
+# layout 1monitor 'Firefox':REPEAT                         ${1-main}
+# layout 1monitor 'Xcode':REPEAT                           ${1-main}
+
+# Default Layout
+# default 1monitor  resolutions:${mon-laptop}
+
+# Push Bindings
+alias flatChord ctrl;alt;cmd
+alias cornerChord ctrl;alt;shift
+bind right:${flatChord}    chain push right bar-resize:screenSizeX*3/5 | corner top-right resize:${goldenCorner} | corner bottom-right resize:${goldenCorner} 
+bind left:${flatChord}     chain push left  bar-resize:screenSizeX*3/5 | corner top-left  resize:${goldenCorner} | corner bottom-left  resize:${goldenCorner} 
+bind right:${cornerChord}  chain corner bottom-right resize:${goldenCorner} | corner top-right resize:${goldenCorner} 
+bind left:${cornerChord}   chain corner bottom-left  resize:${goldenCorner} | corner top-left  resize:${goldenCorner} 
+
+# Focus Bindings
+bind right:cmd;alt    focus right
+bind left:cmd;alt     focus left
+bind up:cmd;alt       focus up
+bind down:cmd;alt     focus down
+
+# Window Hints
+bind esc:cmd hint
+
+# Switch currently doesn't work well so I'm commenting it out until I fix it.
+#bind tab:ctrl switch
+
+# Test Cases
+source .slate.test if_exists
