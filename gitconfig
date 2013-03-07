@@ -2,7 +2,7 @@
   name = Adam Hull
   email = adam@hmlad.com
 [core]
-  excludesfile = .gitignore
+  excludesfile =  ~/.gitignore
 [alias]
   st = status
   di = diff
