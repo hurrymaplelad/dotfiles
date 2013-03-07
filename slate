@@ -35,8 +35,8 @@ alias goldenCorner ${goldenWidth};screenSizeY/2
 # Push Bindings
 alias flatChord ctrl;alt;cmd
 alias cornerChord ctrl;alt;shift
-bind right:${flatChord}    chain push right bar-resize:screenSizeX*3/5 | corner top-right resize:${goldenCorner} | corner bottom-right resize:${goldenCorner} 
-bind left:${flatChord}     chain push left  bar-resize:screenSizeX*3/5 | corner top-left  resize:${goldenCorner} | corner bottom-left  resize:${goldenCorner} 
+bind right:${flatChord}    chain push right bar-resize:screenSizeX*3/5 | push right bar-resize:screenSizeX*2/5
+bind left:${flatChord}     chain push left  bar-resize:screenSizeX*3/5 | push left  bar-resize:screenSizeX*2/5
 bind up:${cornerChord}     chain corner top-right resize:${goldenCorner} | corner bottom-right resize:${goldenCorner} 
 bind right:${cornerChord}  chain corner bottom-right resize:${goldenCorner} | corner top-right resize:${goldenCorner} 
 bind down:${cornerChord}   chain corner bottom-left  resize:${goldenCorner} | corner top-left  resize:${goldenCorner} 
