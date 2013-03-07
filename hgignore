@@ -1,0 +1,5 @@
+syntax: glob
+.*.swp
+.*.tmp
+*.DS_Store
+*.orig

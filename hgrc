@@ -1,0 +1,15 @@
+[ui]
+username = Adam Hull <adam@hmlad.com>
+editor = /usr/bin/vim
+
+ignore = ~/.hgignore
+
+[extensions]
+rebase = 
+graphlog = 
+mq = 
+purge =
+
+[merge-tools]
+filemerge.executable = /usr/local/bin/opendiff-w
+filemerge.args = $local $other -ancestor $base -merge $output
