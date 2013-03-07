@@ -1,0 +1,25 @@
+[user]
+  name = Adam Hull
+  email = adam@hmlad.com
+[core]
+  excludesfile = .gitignore
+[alias]
+  st = status
+  di = diff
+  co = checkout
+  ci = commit
+  br = branch
+  sta = stash
+  llog = log --date=local
+  glog = log --graph
+  io = !git fetch && git log --left-right @{upstream}...
+[apply]
+  whitespace = nowarn
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = true
+[branch]
+  autosetupmerge = true

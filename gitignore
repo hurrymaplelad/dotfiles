@@ -1,0 +1,7 @@
+*.pyc
+*.swp
+.DS_Store
+jhw.*.html
+.idea
+*.sublime-project
+*.sublime-workspace
