@@ -1,0 +1,12 @@
+# chpwd()
+#
+#   chpwd is a special function name recognized by zsh and 
+#   executed when the current directory changes.
+#	To Use:
+#		autoload chpwd
+#
+
+# check if directory actually changed
+if [ "$OLDPWD" != "$PWD" ]; then
+	pls
+fi

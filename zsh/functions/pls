@@ -1,0 +1,29 @@
+# pls()
+#
+#   Pretty Directory Listing
+#	Clear Screen, List contents of the current directory, 
+#   Truncate list if long.
+#	To Use:
+#		autoload pls
+#
+
+# maximimum number of files to list
+if [[ -z $PLS_MAX ]]; then
+	PLS_MAX=25
+fi
+BOLD="\033[1m"
+NORM="\033[0m"
+
+clear
+echo "${BOLD}${PWD}:${NORM}"
+# count files in this directory
+nFiles=`ls -1 | wc -l | tr -d ' \t'`
+if [ $nFiles -gt $PLS_MAX ]; then
+	# too many files, only display first few
+	echo "`ls -F | head -n $PLS_MAX` \n(`expr $nFiles - $PLS_MAX` more)" | rs
+else
+	ls -F
+fi
+
+# use completions from cd - currently not used
+# compdef _cd lcd
