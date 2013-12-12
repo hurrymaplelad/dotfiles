@@ -58,3 +58,5 @@ zstyle :compinstall filename '/Users/adam/.zshrc'
 
 # End of lines added by compinstall
 
+
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
