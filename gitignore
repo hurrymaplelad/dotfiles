@@ -5,3 +5,4 @@ jhw.*.html
 .idea
 *.sublime-project
 *.sublime-workspace
+newrelic_agent.log
