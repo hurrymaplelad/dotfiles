@@ -1,6 +1,6 @@
 {
 	"auto_match_enabled": false,
-	"color_scheme": "Packages/Color Scheme - Default/Dawn.tmTheme",
+	"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
 	"file_exclude_patterns":
 	[
 		"*.bson",
@@ -26,6 +26,7 @@
 		"*.sublime-project",
 		"*.sublime-workspace"
 	],
+	"flatland_square_tabs": true,
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -46,6 +47,7 @@
 	"margin": 2,
 	"save_on_focus_lost": true,
 	"tab_size": 2,
+	"theme": "Flatland Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
