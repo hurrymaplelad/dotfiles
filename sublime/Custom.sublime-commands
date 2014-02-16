@@ -1,0 +1,5 @@
+[
+    { "caption": "Project: Switch", "command": "prompt_select_project" },
+    { "caption": "Find: Next Result", "command": "next_result" },
+    { "caption": "Find: Previous Result", "command": "prev_result" }
+]

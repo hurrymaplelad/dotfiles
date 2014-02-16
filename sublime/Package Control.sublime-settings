@@ -1,0 +1,21 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"Case Conversion",
+		"EditorConfig",
+		"Git",
+		"Handlebars",
+		"JavaScriptNext - ES6 Syntax",
+		"LineEndings",
+		"Markdown Preview",
+		"Package Control",
+		"Pretty JSON",
+		"SideBarEnhancements",
+		"Slate",
+		"Smart Title Case",
+		"Stylus",
+		"Surround",
+		"Vintage Surround"
+	]
+}

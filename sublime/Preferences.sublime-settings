@@ -1,0 +1,51 @@
+{
+	"auto_match_enabled": false,
+	"color_scheme": "Packages/Color Scheme - Default/Dawn.tmTheme",
+	"file_exclude_patterns":
+	[
+		"*.bson",
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-project",
+		"*.sublime-workspace"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"tmp",
+		"ruby_gems",
+		".bundle",
+		".idea",
+		".jhw-cache",
+		".sass-cache"
+	],
+	"font_size": 14.0,
+	"ignored_packages":
+	[
+	],
+	"margin": 2,
+	"save_on_focus_lost": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
