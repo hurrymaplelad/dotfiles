@@ -1,0 +1,8 @@
+[
+    { "caption": "Project: Switch", "command": "prompt_select_workspace" },
+
+    { "caption": "Split Selection into Lines", "command": "split_selection_into_lines"},
+
+    { "caption": "Find: Next Result", "command": "find_next" },
+    { "caption": "Find: Previous Result", "command": "find_prev" }
+]
