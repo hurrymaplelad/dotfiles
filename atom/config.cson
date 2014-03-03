@@ -1,0 +1,15 @@
+'editor':
+  'fontFamily': 'monaco'
+  'fontSize': 15
+'core':
+  'themes': [
+    'atom-dark-flat-ui'
+    'flatland-dark'
+  ]
+  'ignoredNames': [
+    '.git'
+    '.svn'
+    '.DS_Store'
+  ]
+'autosave':
+  'enabled': true
