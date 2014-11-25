@@ -27,3 +27,5 @@
   autosetupmerge = true
 [credential]
   helper = osxkeychain
+[rerere]
+  enabled = true
