@@ -19,7 +19,7 @@
 'body':
   'cmd-o': 'fuzzy-finder:toggle-file-finder'
 
-'.editor':
+'atom-text-editor':
   'cmd-shift-up': 'editor:move-line-up'
   'cmd-shift-down': 'editor:move-line-down'
   'cmd-shift-left': 'editor:outdent-selected-rows'

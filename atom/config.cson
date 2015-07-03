@@ -1,15 +1,28 @@
-'editor':
-  'fontFamily': 'monaco'
-  'fontSize': 15
-'core':
-  'themes': [
-    'atom-dark-flat-ui'
-    'flatland-dark'
-  ]
-  'ignoredNames': [
-    '.git'
-    '.svn'
-    '.DS_Store'
-  ]
-'autosave':
-  'enabled': true
+"*":
+  "exception-reporting":
+    userId: "4f5812d8-5daf-1b1d-476a-72445b15a70e"
+  "release-notes":
+    viewedVersion: "0.93.0"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "c08213bce260da93adbf0abd7ad7a022f72155de"
+  editor:
+    fontFamily: "monaco"
+    invisibles: {}
+    fontSize: 16
+  core:
+    projectHome: "/Users/adam/Projects/"
+    disabledPackages: [
+      "autocomplete-snippets"
+    ]
+  autosave:
+    enabled: true
+  runner:
+    extensions:
+      "spec.coffee": "coffee"
+  "one-dark-ui": {}
+  "autocomplete-plus":
+    autoActivationDelay: 500
+    backspaceTriggersAutocomplete: true
+    minimumWordLength: 2

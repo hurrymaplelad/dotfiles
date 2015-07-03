@@ -4,4 +4,6 @@ sublime/Package Control.system-ca-bundle
 sublime/CoffeeScript.sublime-settings
 atom/packages/
 atom/storage/
+atom/compile-cache/
+atom/.apm/
 .node-gyp/
