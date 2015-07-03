@@ -1,25 +1,37 @@
 {
 	"auto_upgrade_last_run": null,
+	"ignored_packages":
+	[
+	],
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
+		"AdvancedNewFile",
+		"Alignment",
 		"Better CoffeeScript",
 		"Case Conversion",
+		"CSV",
 		"EditorConfig",
 		"Git",
 		"GitGutter",
-		"GitHub Flavored Markdown Preview",
+		"GitHubinator",
+		"GoSublime",
 		"Handlebars",
-		"JavaScriptNext - ES6 Syntax",
-		"LineEndings",
+		"LESS",
+		"Markdown Preview",
 		"Package Control",
 		"Pretty JSON",
+		"Random Everything",
+		"ReactJS",
 		"SideBarEnhancements",
-		"Slate",
-		"Smart Title Case",
 		"Stylus",
-		"Surround",
+		"SublimeLinter",
+		"SublimeLinter-html-tidy",
 		"SyncedSideBar",
 		"Theme - Flatland",
-		"Vintage Surround"
+		"Theme - Spacegray",
+		"Wrap Plus"
 	]
 }
