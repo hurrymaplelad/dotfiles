@@ -8,24 +8,33 @@
   metrics:
     userId: "c08213bce260da93adbf0abd7ad7a022f72155de"
   editor:
-    fontFamily: "monaco"
     invisibles: {}
+    fontFamily: "inconsolata"
     fontSize: 16
   core:
     projectHome: "/Users/adam/Projects/"
     disabledPackages: [
       "autocomplete-snippets"
     ]
+    themes: [
+      "isotope-ui"
+      "atom-material-syntax"
+    ]
   autosave:
     enabled: true
   runner:
     extensions:
       "spec.coffee": "coffee"
-  "one-dark-ui": {}
   "autocomplete-plus":
     autoActivationDelay: 500
     backspaceTriggersAutocomplete: true
     minimumWordLength: 2
+  "bracket-matcher":
+    autocompleteBrackets: false
+  "isotope-ui":
+    fontWeight: "Extra light / Thin"
+    fontFamily: "Fira Sans"
+    matchEditorFont: true
 ".jade.source":
   whitespace:
     removeTrailingWhitespace: true
