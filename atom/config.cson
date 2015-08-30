@@ -26,3 +26,6 @@
     autoActivationDelay: 500
     backspaceTriggersAutocomplete: true
     minimumWordLength: 2
+".jade.source":
+  whitespace:
+    removeTrailingWhitespace: true
