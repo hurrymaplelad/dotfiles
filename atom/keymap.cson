@@ -24,3 +24,21 @@
   'cmd-shift-down': 'editor:move-line-down'
   'cmd-shift-left': 'editor:outdent-selected-rows'
   'cmd-shift-right': 'editor:indent-selected-rows'
+
+  'cmd-l': 'go-to-line:toggle'
+
+'atom-text-editor.vim-mode:not(.insert-mode)':
+  # Replace vim search with lazymotion
+  '/': 'lazy-motion:forward-again'
+  '?': 'lazy-motion:backward'
+  'n': 'lazy-motion:forward-again'
+  'N': 'lazy-motion:backward-again'
+
+  ':': 'go-to-line:toggle'
+
+'atom-text-editor.lazy-motion':
+  'up': 'lazy-motion:set-history-prev'
+  'down': 'lazy-motion:set-history-next'
+  'shift-enter': 'lazy-motion:forward'
+  'tab': 'lazy-motion:forward'
+  'shift-tab': 'lazy-motion:backward'
