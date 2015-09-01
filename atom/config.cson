@@ -35,6 +35,8 @@
     fontWeight: "Extra light / Thin"
     fontFamily: "Fira Sans"
     matchEditorFont: true
+  "code-links":
+    "modifierKey": "alt"
 ".jade.source":
   whitespace:
     removeTrailingWhitespace: true
