@@ -4,11 +4,12 @@
 # after packages are loaded/activated and after the previous editor state
 # has been restored.
 #
-# An example hack to make opened Markdown files always be soft wrapped:
 #
-# path = require 'path'
-#
-# atom.workspaceView.eachEditorView (editorView) ->
-#   editor = editorView.getEditor()
-#   if path.extname(editor.getPath()) is '.md'
-#     editor.setSoftWrap(true)
+
+# Alias grammer selector as Set Syntax
+atom.commands.add 'atom-editor', 'grammar-selector:set-syntax': (event) ->
+  atom.commands.dispatch event.target, 'grammar-selector:show'
+
+# Alias rename as Set Syntax
+atom.commands.add 'atom-workspace', 'tree-view:move': (event) ->
+  atom.commands.dispatch event.target, 'tree-view:rename'
