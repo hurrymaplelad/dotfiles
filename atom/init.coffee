@@ -6,10 +6,17 @@
 #
 #
 
-# Alias grammer selector as Set Syntax
-atom.commands.add 'atom-editor', 'grammar-selector:set-syntax': (event) ->
-  atom.commands.dispatch event.target, 'grammar-selector:show'
+aliasCommand = atom.packages.getLoadedPackage('alias-command').requireMainModule()
 
-# Alias rename as Set Syntax
-atom.commands.add 'atom-workspace', 'tree-view:move': (event) ->
-  atom.commands.dispatch event.target, 'tree-view:rename'
+aliasCommand 'grammar-selector:set-syntax',
+  orig: 'grammar-selector:show'
+  scope: 'atom-editor'
+
+aliasCommand 'tree-view:move',
+  orig: 'tree-view:rename'
+
+aliasCommand 'package-control:install',
+  orig: 'settings-view:install-packages-and-themes'
+
+aliasCommand 'package-control:uninstall',
+  orig: 'settings-view:uninstall-packages'
