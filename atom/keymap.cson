@@ -19,6 +19,10 @@
 'body':
   'cmd-o': 'fuzzy-finder:toggle-file-finder'
 
+# Temporary fix 'till the PR is merged
+'body.code-links-meta atom-text-editor':
+  'cmd': 'code-links:tmp-show-links'
+
 'atom-text-editor':
   'cmd-shift-up': 'editor:move-line-up'
   'cmd-shift-down': 'editor:move-line-down'
@@ -26,6 +30,8 @@
   'cmd-shift-right': 'editor:indent-selected-rows'
 
   'cmd-l': 'go-to-line:toggle'
+
+  'cmd-\\': 'tree-view:reveal-active-file'
 
 'atom-text-editor.vim-mode:not(.insert-mode)':
   # Replace vim search with lazymotion

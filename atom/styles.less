@@ -12,7 +12,34 @@
 @teal: #4ECDC4;
 @slime: #8FBE00;
 
+html, body {
+  // These affect UI fonts with the Isotope UI theme.
+  // Editor fonts are more specfic.
+  font-size: 14px;
+  font-family: "Inconsolata";
+}
+
 // Hide icons in the tree sidebar
 .tree-view .icon::before {
   display: none;
+}
+
+// Give active tab plenty of room
+.tab-bar .tab {
+  max-width: 300px;
+  &.active {
+    -webkit-flex: 3;
+  }
+}
+
+// Center the command palette a lil
+atom-panel.modal {
+  margin-top: 10%;
+}
+
+// Make code-links plugin underlines more subtle
+body.code-links-visible atom-text-editor::shadow {
+    .code-links .region {
+        border-bottom: thin solid rgba(155,155,255,0.4) ;
+    }
 }

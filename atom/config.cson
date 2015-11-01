@@ -9,8 +9,12 @@
     userId: "c08213bce260da93adbf0abd7ad7a022f72155de"
   editor:
     invisibles: {}
+    scrollSensitivity: 30
+    softWrap: false
+    softWrapHangingIndent: 3
     fontFamily: "inconsolata"
-    fontSize: 16
+    fontSize: 18
+    showInvisibles: false
   core:
     projectHome: "/Users/adam/Projects/"
     disabledPackages: [
@@ -18,7 +22,7 @@
     ]
     themes: [
       "isotope-ui"
-      "atom-material-syntax"
+      "gruvbox"
     ]
   autosave:
     enabled: true
@@ -36,7 +40,17 @@
     fontFamily: "Fira Sans"
     matchEditorFont: true
   "code-links":
-    "modifierKey": "alt"
+    modifierKey: "meta"
+  linter:
+    lintOnFly: false
+    showErrorPanel: false
+    showErrorTabProject: false
+    statusIconScope: "File"
+    showErrorTabFile: false
+  "linter-pep8":
+    pep8ExecutablePath: "/usr/local/bin/pep8"
+  "git-blame":
+    dateFormatString: "YYMMDD"
 ".jade.source":
   whitespace:
     removeTrailingWhitespace: true
