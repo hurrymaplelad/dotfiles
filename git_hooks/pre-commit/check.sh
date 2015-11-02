@@ -11,7 +11,7 @@ failVerification () {
 # Big Files
 #
 # any files larger than 500KB?
-bigFiles=`stagedNotDeleted | nullXargs -L 1 wc -c | grep -E "^\s+([1-9]\d)|([5-9])\d{5}\d*"`
+bigFiles=`stagedNotDeleted | nullXargs -L 1 wc -c | grep -E "^\s+([1-9]\d|[5-9])\d{5}\d*"`
 
 if [[ ! -z $bigFiles ]]; then
   echo
