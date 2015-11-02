@@ -4,6 +4,13 @@
 # zsh interactive shell configuration
 #####################################
 
+# Bump maximum number of file descriptor for
+# dev tasks watching large repos.
+ulimit -n 10000
+
+# Change directories by typing their names. No `cd` required.
+setopt autocd
+
 # Load version control stats for prompt
 setopt prompt_subst
 autoload -Uz vcs_info
@@ -19,17 +26,19 @@ export PROMPT='%B%3c${vcs_info_msg_0_}%(!.#.$)%b '
 # use vi style keybindings
 bindkey -v
 
+# bind history search
+bindkey "^R" history-incremental-search-backward
+
 # add custom functions to fpath
 fpath=(~/.zsh/functions $fpath)
 
-#default vim to open multiple files in tabs
+# default vim to open multiple files in tabs
 alias vim='vim -p'
 alias mvim='mvim -p'
 
-# Customize cd:
-# chpwd 
-#   a function named chpwd gets executed by zsh
-#   whenever the current working directory changes
+# Call our custom chpwd() function every time
+# we change directories.  This is a special
+# function name recognized by zsh.
 autoload chpwd
 
 # clear screen and list first couple files
@@ -58,5 +67,5 @@ zstyle :compinstall filename '/Users/adam/.zshrc'
 
 # End of lines added by compinstall
 
-
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
+# added by travis gem
+[ -f /Users/adam/.travis/travis.sh ] && source /Users/adam/.travis/travis.sh
