@@ -18,6 +18,7 @@ path=(
   /usr/local/bin
   /usr/local/sbin
   $JAVA_HOME/bin
+  ./node_modules/.bin
   $path
   $GOPATH/bin
 )
