@@ -29,6 +29,8 @@ bindkey -v
 # bind history search
 bindkey "^R" history-incremental-search-backward
 
+eval "$(nodenv init -)"
+
 # add custom functions to fpath
 fpath=(~/.zsh/functions $fpath)
 
