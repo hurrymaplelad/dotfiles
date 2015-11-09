@@ -10,7 +10,11 @@ aliasCommand = atom.packages.getLoadedPackage('alias-command').requireMainModule
 
 aliasCommand 'grammar-selector:set-syntax',
   orig: 'grammar-selector:show'
-  scope: 'atom-editor'
+  scope: 'atom-text-editor'
+
+aliasCommand 'grammar-selector:set-file-type',
+  orig: 'grammar-selector:show'
+  scope: 'atom-text-editor'
 
 aliasCommand 'tree-view:move',
   orig: 'tree-view:rename'

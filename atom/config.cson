@@ -51,6 +51,10 @@
     pep8ExecutablePath: "/usr/local/bin/pep8"
   "git-blame":
     dateFormatString: "YYMMDD"
+  whitespace:
+    ensureSingleTrailingNewline: true
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
 ".jade.source":
   whitespace:
     removeTrailingWhitespace: true
