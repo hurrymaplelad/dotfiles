@@ -4,70 +4,68 @@
 # zsh interactive shell configuration
 #####################################
 
+# add custom functions to fpath
+fpath=(~/.zsh/functions $fpath)
+
+# prezto
+source ~/.zprezto/init.zsh
+
 # Bump maximum number of file descriptor for
 # dev tasks watching large repos.
 ulimit -n 10000
 
-# Change directories by typing their names. No `cd` required.
-setopt autocd
-
-# Load version control stats for prompt
-setopt prompt_subst
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' formats " %F{8}(%b)%f"
-precmd() {
-  vcs_info
-}
-
-# customize the prompt
-export PROMPT='%B%3c${vcs_info_msg_0_}%(!.#.$)%b '
-
-# use vi style keybindings
-bindkey -v
-
-# bind history search
-bindkey "^R" history-incremental-search-backward
-
-eval "$(nodenv init -)"
-
-# add custom functions to fpath
-fpath=(~/.zsh/functions $fpath)
+# -------
+# Aliases
+# -------
 
 # default vim to open multiple files in tabs
 alias vim='vim -p'
 alias mvim='mvim -p'
 
-# Call our custom chpwd() function every time
-# we change directories.  This is a special
-# function name recognized by zsh.
-autoload chpwd
-
-# clear screen and list first couple files
-autoload pls
-
 # Add wmv for moving files with wildcards
 autoload zmv
 alias wmv='noglob zmv -W'
 
-# for building custom completions, verbose completion
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*:descriptions' format '%B%d%b'
-zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:warnings' format 'No matches for: %d'
-zstyle ':completion:*' group-name ''
+# Reset silly prezto aliases
+unalias rm
 
-# load and enable completion
-autoload -U compinit
-compinit
+# Differentaite files and directories with suffixes, not colors
+unalias ls
+alias ls="ls -F"
 
-# The following lines were added by compinstall
+# Fancy cd
 
-zstyle ':completion:*' completer _complete
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}'
-zstyle :compinstall filename '/Users/adam/.zshrc'
+# Change directories by typing their names. No `cd` required.
+setopt autocd
 
-# End of lines added by compinstall
+# clear screen and list first couple files
+autoload pls
 
-# added by travis gem
-[ -f /Users/adam/.travis/travis.sh ] && source /Users/adam/.travis/travis.sh
+# This is a special function name recognized by zsh
+# autoload chpwd
+
+# Easily switch projects
+prj() { cd ~/Projects/$1 }
+compctl -W ~/Projects -/ prj
+
+# Dont offer to correct my typos, I need to learn from the pain of retyping
+setopt nocorrect
+
+# -----------
+# Keybindings
+# -----------
+# history-substring-search provided by prezto
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# -------
+# History
+# -------
+setopt hist_ignore_dups
+
+# --------------------
+# Virtual environments
+# --------------------
+
+eval "$(nodenv init -)"
+eval "$(rbenv init -)"
