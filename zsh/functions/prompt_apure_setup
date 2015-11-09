@@ -1,0 +1,193 @@
+# APure
+# by Adam Hull
+#
+# Best with Inconsolata with Powerline
+# https://github.com/powerline/fonts/blob/master/Inconsolata
+#
+# Derived from pure:
+# https://github.com/sindresorhus/pure
+# and agnoster
+# https://gist.github.com/agnoster/3712874
+# MIT License
+
+# For my own and others sanity
+# git:
+# %b => current branch
+# %a => current action (rebase/merge)
+# prompt:
+# %F => color dict
+# %f => reset color
+# %~ => current path
+# %* => time
+# %n => username
+# %m => shortname host
+# %(?..) => prompt conditional - %(condition.true.false)
+# terminal codes:
+# \e7   => save cursor position
+# \e[2A => move cursor 2 lines up
+# \e[1G => go to position 1 in terminal
+# \e8   => restore cursor position
+# \e[K  => clears everything after the cursor on the current line
+# \e[2K => clear everything on the current line
+
+#
+# Prompt rendering
+#
+BRANCH="\ue0a0"
+PRIMARY_BG=black
+PRIMARY_FG=white
+
+# Wite a colorful segment
+# Takes two arguments, background and foreground. Both can be omitted,
+# rendering default background/foreground.
+prompt_apure_color() {
+  local bg fg
+  [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
+  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+  print -n "%{$bg%}%{$fg%}"
+  [[ -n $3 ]] && print -n $3
+}
+
+# Context: user@hostname (who am I and where am I)
+prompt_apure_user() {
+  if [[ -n "$prompt_apure_username" || -n "$SSH_CONNECTION" ]]; then
+    prompt_apure_color $PRIMARY_FG default "%(!.%{%F{yellow}%}.)$prompt_apure_username "
+  fi
+}
+
+# Git: branch/detached head
+prompt_apure_git() {
+  local color ref
+  ref="$vcs_info_msg_0_"
+  if [[ -n "$ref" ]]; then
+    if [[ "${ref/.../}" == "$ref" ]]; then
+      ref="$ref"
+    else
+      ref="${ref/.../}"
+    fi
+    print -P "$BRANCH $ref"
+  fi
+}
+
+prompt_apure_render() {
+  [[ -n $vcs_info_msg_1_ ]] && prompt_apure_proj="$vcs_info_msg_1_" || prompt_apure_proj="%2~"
+  [[ -n $vcs_info_msg_2_ ]] && prompt_apure_subdir="./${vcs_info_msg_2_}"
+  [[  "$prompt_apure_subdir" = "./." ]] && prompt_apure_subdir="" || prompt_apure_subdir="$prompt_apure_subdir "
+
+  local last
+  if [[ $KEYMAP = 'vicmd' ]]; then
+    last="▏"
+  else
+    last="❭"
+  fi
+
+  prompt_apure_line2="%(?.%F{173}.%F{red})❱❱ ${prompt_apure_proj} ❱${last}%{%f%b%k%} "
+
+  if [[ -n $vcs_info_msg_1_ ]]; then
+PROMPT="
+${prompt_apure_subdir}$(prompt_apure_git)
+$prompt_apure_line2"
+  else
+PROMPT="
+$prompt_apure_line2"
+  fi
+}
+
+# Potential alternative promp chars
+# ▱▱ master ▱ src/web/styleguide
+#▱ ops-purchase-orders ❱❭
+# ❯
+# ⦔
+#  ▎garbanzo ▎▎master ▎
+# ▱▱ ops-p ▱ master ❱❭
+# ❱❭
+# ▱▰▰▱ ▱▱▱ ▰▰▱▰▰
+# ▏▎▍▏
+
+
+#
+# Hooks
+#
+
+prompt_apure_precmd() {
+	vcs_info
+  prompt_apure_render
+}
+
+prompt_apure_preexec() {
+	# shows the current dir and executed command in the title while a process is active
+	prompt_apure_set_title 'ignore-escape' "$PWD:t: $2"
+}
+
+# redraw prompt on vim mode change
+zle-line-init zle-keymap-select () {
+  prompt_apure_render
+  zle reset-prompt
+}
+
+prompt_apure_setup() {
+	# prevent percentage showing up
+	# if output doesn't end with a newline
+	export PROMPT_EOL_MARK=''
+
+	prompt_opts=(subst percent)
+
+	zmodload zsh/zle
+	autoload -Uz add-zsh-hook
+	autoload -Uz vcs_info
+
+	add-zsh-hook precmd prompt_apure_precmd
+	add-zsh-hook preexec prompt_apure_preexec
+
+	zstyle ':vcs_info:*' enable git
+	zstyle ':vcs_info:*' use-simple true
+	# only export two msg variables from vcs_info
+	zstyle ':vcs_info:*' max-exports 3
+	# vcs_info_msg_0_ = ' %b' (for branch)
+	# vcs_info_msg_1_ = '%r' git repo name (%r)
+	# vcs_info_msg_2_ = '%S' path within repo
+	zstyle ':vcs_info:git*' formats '%b' '%r' '%S'
+	zstyle ':vcs_info:git*' actionformats '%b|%a' '%r' '%S'
+
+	# if the user has not registered a custom zle widget for clear-screen,
+	# override the builtin one so that the preprompt is displayed correctly when
+	# ^L is issued.
+	if [[ $widgets[clear-screen] == 'builtin' ]]; then
+		zle -N clear-screen prompt_apure_clear_screen
+	fi
+
+	# show username@host if logged in through SSH
+	[[ "$SSH_CONNECTION" != '' ]] && prompt_apure_username=' %F{242}%n@%m%f'
+
+	# show username if root, with username in white
+	[[ $UID -eq 0 ]] && prompt_apure_username=' %F{white}%n%f'
+}
+
+#
+# Helpers
+#
+prompt_apure_clear_screen() {
+	# enable output to terminal
+	zle -I
+	# clear screen and move cursor to (0, 0)
+	print -n '\e[2J\e[0;0H'
+	# print preprompt
+	prompt_apure_preprompt_render
+}
+
+prompt_apure_set_title() {
+	# tell the terminal we are setting the title
+	print -n '\e]0;'
+	# show hostname if connected through ssh
+	[[ -n $SSH_CONNECTION ]] && print -Pn '(%m) '
+	case $1 in
+		expand-prompt)
+			print -Pn $2;;
+		ignore-escape)
+			print -rn $2;;
+	esac
+	# end set title
+	print -n '\a'
+}
+
+prompt_apure_setup "$@"
