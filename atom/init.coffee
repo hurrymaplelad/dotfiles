@@ -1,4 +1,5 @@
 # Your init script
+t 
 #
 # Atom will evaluate this file each time a new window is opened. It is run
 # after packages are loaded/activated and after the previous editor state
@@ -18,6 +19,9 @@ aliasCommand 'grammar-selector:set-file-type',
 
 aliasCommand 'tree-view:move',
   orig: 'tree-view:rename'
+
+aliasCommand 'tree-view:delete-file',
+  orig: 'tree-view:remove'
 
 aliasCommand 'package-control:install',
   orig: 'settings-view:install-packages-and-themes'
