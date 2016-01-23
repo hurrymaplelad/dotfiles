@@ -8,7 +8,10 @@
 export EDITOR=/usr/bin/vim
 
 # Setup Golang
-export GOPATH=$HOME/Projects/go
+export GOPATH="$HOME/Projects/go"
+
+# Re-point `apm develop`
+export ATOM_REPOS_HOME="$HOME/Projects"
 
 # Setup path for Apache Spark installed via Homebrew
 export SPARK_HOME=$(brew --prefix apache-spark)/libexec
@@ -18,6 +21,7 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Hom
 
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
 export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
+
 
 # only add things that aren't there
 typeset -U path
