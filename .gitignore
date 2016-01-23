@@ -4,8 +4,10 @@ sublime/Package Control.system-ca-bundle
 sublime/CoffeeScript.sublime-settings
 sublime/
 atom/packages/
+atom/blob-store/
 atom/storage/
 atom/dev/
 atom/compile-cache/
 atom/.apm/
 .node-gyp/
+.zshenv.local
