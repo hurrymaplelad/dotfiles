@@ -69,6 +69,14 @@ prompt_apure_git() {
   fi
 }
 
+# Python virtualenv
+prompt_apure_virtualenv() {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    venv_last_2=$(basename $(dirname $VIRTUAL_ENV))/$(basename $VIRTUAL_ENV)
+    print -P "($venv_last_2) "
+  fi
+}
+
 prompt_apure_render() {
   [[ -n $vcs_info_msg_1_ ]] && prompt_apure_proj="$vcs_info_msg_1_" || prompt_apure_proj="%2~"
   [[ -n $vcs_info_msg_2_ ]] && prompt_apure_subdir="./${vcs_info_msg_2_}"
@@ -85,7 +93,7 @@ prompt_apure_render() {
 
   if [[ -n $vcs_info_msg_1_ ]]; then
 PROMPT="
-${prompt_apure_subdir}$(prompt_apure_git)
+$(prompt_apure_virtualenv)${prompt_apure_subdir}$(prompt_apure_git)
 $prompt_apure_line2"
   else
 PROMPT="
