@@ -22,6 +22,16 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Hom
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
 export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
 
+# --------------------
+# Virtual environments
+# --------------------
+# These add to the beginning of the PATH
+eval "$(nodenv init -)"
+eval "$(rbenv init -)"
+
+# --------------------
+# Path
+# --------------------
 
 # only add things that aren't there
 typeset -U path

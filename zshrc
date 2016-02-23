@@ -62,10 +62,3 @@ bindkey '^[[B' history-substring-search-down
 # History
 # -------
 setopt hist_ignore_dups
-
-# --------------------
-# Virtual environments
-# --------------------
-
-eval "$(nodenv init -)"
-eval "$(rbenv init -)"
