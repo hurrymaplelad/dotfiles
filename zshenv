@@ -4,6 +4,18 @@
 #  - this file is committed.  Use .zshenv.local for machine specific or sensitive vars
 #####################################
 
+# --------------------
+# Path
+# --------------------
+
+# only add things that aren't there
+typeset -U path
+# add more to $PATH as an array
+path=(
+  /usr/local/bin
+  $path
+)
+
 # Default text editor
 export EDITOR=/usr/bin/vim
 
@@ -22,6 +34,7 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Hom
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
 export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
 
+
 # --------------------
 # Virtual environments
 # --------------------
@@ -30,12 +43,10 @@ eval "$(nodenv init -)"
 eval "$(rbenv init -)"
 
 # --------------------
-# Path
+# More Path
 # --------------------
 
-# only add things that aren't there
-typeset -U path
-# add to $PATH as an array
+# add more to $PATH as an array
 path=(
   /usr/local/bin
   /usr/local/sbin
