@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Bootstrap a new Mac
+# Derived from Good Eggs developer start: https://github.com/goodeggs/developer-start
+
+set -e
+
+# generate an SSH key
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+
+# install homebrew (also install xcode tools)
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/HomeBrew/install/master/install)" < $input
+brew doctor
+mkdir -p ~/Library/LaunchAgents
+
+brew install git
+
+# install homebrew cask for Mac apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
+brew cask install dropbox 1password google-chrome notational-velocity atom slate
+
+# create projects directory
+mkdir -p ~/Projects
