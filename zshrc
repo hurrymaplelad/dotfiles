@@ -28,9 +28,9 @@ alias wmv='noglob zmv -W'
 
 # Reset silly prezto aliases
 unalias rm
+unalias ls
 
 # Differentaite files and directories with suffixes, not colors
-unalias ls
 alias ls="ls -F"
 
 # Fancy cd

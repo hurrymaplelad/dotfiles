@@ -16,8 +16,6 @@ mkdir -p ~/Library/LaunchAgents
 brew install git
 
 # install homebrew cask for Mac apps
-brew tap phinze/homebrew-cask
-brew install brew-cask
 brew cask install dropbox 1password google-chrome notational-velocity atom slate
 
 # create projects directory
