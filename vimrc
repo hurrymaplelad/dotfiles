@@ -23,7 +23,7 @@ set linebreak		" automatically break long lines
 
 " Auto Indent ----------------------------------------------------------------
 set tabstop=2 			" tabs appear as 2 spaces
-set shiftwidth=2		" 
+set shiftwidth=2		"
 set autoindent 			" always set autoindenting on
 set expandtab       " replace tabs with spaces
 set smartindent
@@ -31,7 +31,7 @@ set smartindent
 
 " Sytax Highlighting ---------------------------------------------------------
 " Switch syntax highlighting on, when the terminal has colors
-colorscheme desert 	
+colorscheme desert
 syntax on
 
 " Abbreviations --------------------------------------------------------------
@@ -42,7 +42,7 @@ cabbrev help tab help
 cabbrev tbn tabnew
 
 " Key Mappings ---------------------------------------------------------------
-set backspace=indent,eol,start 	" allow backspacing over everything 
+set backspace=indent,eol,start 	" allow backspacing over everything
 noremap <Space> <PageDown>
 noremap <BS> <PageUp>
 " vertical scroll by screen line, makes sense with linebreak
@@ -67,7 +67,7 @@ inoremap <Enter> <C-R>=InsertEnterWrapper()<CR>
 function! InsertEnterWrapper()
 	if pumvisible()
 		return "\<C-Y>"
-	else 
+	else
 		return "\<Enter>"
 	endif
 endfunction
@@ -80,7 +80,7 @@ if has("autocmd")
 	au!
 
 	" never automatically continue comments
-	autocmd FileType * set formatoptions-=ro  
+	autocmd FileType * set formatoptions-=ro
 
 	" When editing a file, always jump to the last known cursor position.
 	autocmd BufReadPost *
@@ -91,9 +91,9 @@ if has("autocmd")
 	augroup END
 endif
 
-" Plugins 
+" Plugins
 "  perhaps: ack.vim, ctrlp.vim, vim-json, vim-coffee-script
-call pathogen#infect()
+" call pathogen#infect()
 
 " Ctrl.p
 let g:ctrlp_open_new_file = 't'
@@ -110,4 +110,3 @@ let g:ctrlp_prompt_mappings = {
 
 " vim-coffee-script
 let coffee_compile_vert = 0
-
