@@ -51,6 +51,9 @@ compctl -W ~/Projects -/ prj
 # Dont offer to correct my typos, I need to learn from the pain of retyping
 setopt nocorrect
 
+# Reduce delay switching to edit mode
+export KEYTIMEOUT=1
+
 # -----------
 # Keybindings
 # -----------
