@@ -40,7 +40,6 @@ export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
 # --------------------
 # These add to the beginning of the PATH
 eval "$(nodenv init -)"
-eval "$(rbenv init -)"
 
 # --------------------
 # More Path
