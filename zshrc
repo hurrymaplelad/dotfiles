@@ -33,6 +33,13 @@ unalias ls
 # Differentaite files and directories with suffixes, not colors
 alias ls="ls -F"
 
+# Use zsh run-help for detailed help with built in commands
+export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
+unalias run-help
+autoload -Uz run-help
+alias help=run-help
+alias man=run-help
+
 # Fancy cd
 
 # Change directories by typing their names. No `cd` required.
@@ -51,15 +58,18 @@ compctl -W ~/Projects -/ prj
 # Dont offer to correct my typos, I need to learn from the pain of retyping
 setopt nocorrect
 
-# Reduce delay switching to edit mode
-export KEYTIMEOUT=1
-
 # -----------
 # Keybindings
 # -----------
 # history-substring-search provided by prezto
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Show man pages mid-command
+bindkey '^h' run-help
+
+# Reduce delay switching to vi edit mode
+export KEYTIMEOUT=1
 
 # -------
 # History

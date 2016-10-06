@@ -11,6 +11,7 @@
 # only add things that aren't there
 typeset -U path
 # add more to $PATH as an array
+# add brew first, so we can use it to build the rest of the path
 path=(
   /usr/local/bin
   $path
