@@ -35,6 +35,7 @@
     fontFamily: "Fira Sans"
     fontWeight: "Extra light / Thin"
     matchEditorFont: true
+    minimalMode: true
   "language-babel":
     autoIndentJSX: true
   linter:
