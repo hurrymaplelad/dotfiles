@@ -3,4 +3,4 @@ dotfiles
 
 See http://dotfiles.github.io/
 
-Setup ~/ and clobber any conflicting files with `make clean install`
+Run `./start` to bootstrap a new machine with symlinked dotfiles and loads of homebrew.
