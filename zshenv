@@ -40,7 +40,9 @@ export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
 # Virtual environments
 # --------------------
 # These add to the beginning of the PATH
-eval "$(nodenv init -)"
+eval "$(nodenv init - --no-rehash)"
+# Rehash in the background for faster startup
+(nodenv rehash &) &> /dev/null
 
 # --------------------
 # More Path
