@@ -27,7 +27,8 @@ export GOPATH="$HOME/Projects/go"
 export ATOM_REPOS_HOME="$HOME/Projects"
 
 # Setup path for Apache Spark installed via Homebrew
-export SPARK_HOME=$(brew --prefix apache-spark)/libexec
+# Should use $(brew --prefix apache-spark)/libexec, but brew --prefix slows down shell startup
+export SPARK_HOME="/usr/local/Cellar/apache-spark/2.0.1/libexec"
 
 # Prefer homebrew Java
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre"
