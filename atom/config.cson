@@ -15,10 +15,12 @@
       "fast-eslint"
     ]
     projectHome: "/Users/adam/Projects/"
+    telemetryConsent: "limited"
     themes: [
       "isotope-ui"
       "gruvbox"
     ]
+    useCustomTitleBar: true
   editor:
     fontFamily: "inconsolata"
     fontSize: 19
