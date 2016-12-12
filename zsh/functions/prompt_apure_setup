@@ -128,7 +128,7 @@ line1="
 ${line1}"
     fi
 PROMPT="$line1
-$(prompt_apure_user)$(prompt_apure_arrow $proj) "
+$(prompt_apure_arrow $proj) "
   else
 PROMPT="
 $(prompt_apure_arrow $dir_suffix) "
