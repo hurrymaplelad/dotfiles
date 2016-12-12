@@ -102,10 +102,10 @@ prompt_apure_proj_path() {
 prompt_apure_branch() {
   local vcs=$prompt_apure_vcs_info[vcs]
   local branch icon
-  if [[ $vcs == "git" ]]; then
+  if [[ $vcs == "git"* ]]; then
     branch="${prompt_apure_vcs_info[branch]/.../}"
     icon=$BRANCH
-  elif [[ $vcs == "hg" ]]; then
+  elif [[ $vcs == "hg"* ]]; then
     branch="${prompt_apure_vcs_info[misc]}"
     icon=$MERCURY
   fi
