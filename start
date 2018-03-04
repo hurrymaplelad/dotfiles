@@ -20,6 +20,10 @@ brew install nodenv-package-rehash
 # install homebrew cask for Mac apps
 brew cask install dropbox 1password google-chrome notational-velocity atom slate
 
+# install QuickLook plugins
+# details at https://github.com/sindresorhus/quick-look-plugins
+brew cask install qlstephen qlmarkdown 
+
 # create projects directory
 mkdir -p ~/Projects
 
