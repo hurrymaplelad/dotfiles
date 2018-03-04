@@ -20,10 +20,10 @@
       "isotope-ui"
       "gruvbox"
     ]
-    useCustomTitleBar: true
+    titleBar: "custom"
   editor:
     fontFamily: "inconsolata"
-    fontSize: 19
+    fontSize: 20
     invisibles: {}
     scrollSensitivity: 30
     showInvisibles: false
@@ -49,10 +49,16 @@
   "linter-eslint": {}
   "linter-pep8":
     pep8ExecutablePath: "/usr/local/bin/pep8"
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   metrics:
     userId: "c08213bce260da93adbf0abd7ad7a022f72155de"
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      showInStatusBar: true
   preview:
     _analyticsUserId: "9a423bea-128d-4cad-ba0b-32935d68a59d"
   "release-notes":
