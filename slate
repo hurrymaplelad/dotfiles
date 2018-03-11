@@ -18,8 +18,8 @@ config windowHintsFontSize true
 alias mon-laptop      1440x1050
 
 # Favorite Dimensions
-alias goldenWidth screenSizeX*3/5
-alias goldenCorner ${goldenWidth};screenSizeY/2
+alias goldenWidth screenSizeX*4/7
+alias goldenCorner screenSizeX*3/7;screenSizeY/2
 
 # Layout
 # layout 1monitor 'Terminal':SORT_TITLE,REPEAT                ${1-main}
@@ -35,12 +35,12 @@ alias goldenCorner ${goldenWidth};screenSizeY/2
 # Push Bindings
 alias flatChord ctrl;alt;cmd
 alias cornerChord ctrl;alt;shift
-bind right:${flatChord}    chain push right bar-resize:screenSizeX*3/5 | push right bar-resize:screenSizeX*2/5
-bind left:${flatChord}     chain push left  bar-resize:screenSizeX*3/5 | push left  bar-resize:screenSizeX*2/5
-bind up:${cornerChord}     chain corner top-right resize:${goldenCorner} | corner bottom-right resize:${goldenCorner} 
-bind right:${cornerChord}  chain corner bottom-right resize:${goldenCorner} | corner top-right resize:${goldenCorner} 
-bind down:${cornerChord}   chain corner bottom-left  resize:${goldenCorner} | corner top-left  resize:${goldenCorner} 
-bind left:${cornerChord}   chain corner top-left  resize:${goldenCorner} | corner bottom-left  resize:${goldenCorner} 
+bind right:${flatChord}    chain push right bar-resize:screenSizeX*4/7 | push right bar-resize:screenSizeX*3/7
+bind left:${flatChord}     chain push left  bar-resize:screenSizeX*4/7 | push left  bar-resize:screenSizeX*3/7
+bind up:${cornerChord}     chain corner top-right resize:${goldenCorner} | corner bottom-right resize:${goldenCorner}
+bind right:${cornerChord}  chain corner bottom-right resize:${goldenCorner} | corner top-right resize:${goldenCorner}
+bind down:${cornerChord}   chain corner bottom-left  resize:${goldenCorner} | corner top-left  resize:${goldenCorner}
+bind left:${cornerChord}   chain corner top-left  resize:${goldenCorner} | corner bottom-left  resize:${goldenCorner}
 
 # Focus Bindings
 bind right:cmd;alt    focus right
