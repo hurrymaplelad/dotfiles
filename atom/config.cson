@@ -1,4 +1,16 @@
 "*":
+  "atom-material-ui":
+    colors:
+      abaseColor: "#cddc39"
+      accentColor: "#737f10"
+      genAccent: true
+      paintCursor: true
+      predefinedColor: "Lime"
+    fonts: {}
+    tabs:
+      compactTabs: true
+    ui:
+      useAnimations: false
   "autocomplete-plus":
     autoActivationDelay: 500
     backspaceTriggersAutocomplete: true
@@ -10,20 +22,36 @@
   "code-links":
     modifierKey: "meta"
   core:
+    audioBeep: false
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "autocomplete-snippets"
       "fast-eslint"
+      "linter"
+      "tree-view"
     ]
+    excludeVcsIgnoredPaths: false
     projectHome: "/Users/adam/Projects/"
     telemetryConsent: "limited"
     themes: [
-      "isotope-ui"
-      "gruvbox"
+      "atom-material-ui"
+      "atom-material-muted-syntax"
     ]
     titleBar: "custom"
   editor:
     fontFamily: "inconsolata"
-    fontSize: 20
+    fontSize: 19
     invisibles: {}
     scrollSensitivity: 30
     showInvisibles: false
@@ -35,7 +63,8 @@
     dateFormatString: "YYMMDD"
   "isotope-ui":
     fontFamily: "Fira Sans"
-    fontWeight: "Extra light / Thin"
+    fontWeight: "Light"
+    lowContrastTooltip: true
     matchEditorFont: true
     minimalMode: true
   "language-babel":
@@ -46,15 +75,23 @@
     showErrorTabFile: false
     showErrorTabProject: false
     statusIconScope: "File"
-  "linter-eslint": {}
+  "linter-eslint":
+    rulesToSilenceWhileTyping: [
+      "prettier/prettier"
+    ]
   "linter-pep8":
     pep8ExecutablePath: "/usr/local/bin/pep8"
   "linter-ui-default":
+    panelHeight: 164
     showPanel: true
   "markdown-preview":
+    breakOnSingleNewline: true
     useGitHubStyle: true
   metrics:
     userId: "c08213bce260da93adbf0abd7ad7a022f72155de"
+  nuclide:
+    "nuclide-home":
+      showHome: false
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true

@@ -9,10 +9,11 @@
  */
 @lavender: #C8D7E8;
 @yellow: #E9EE00;
-@teal: #4ECDC4;
-@slime: #8FBE00;
+@teal: #4ecdc4;
+@slime: #8fbe00;
 
-html, body {
+html,
+body {
   // These affect UI fonts with the Isotope UI theme.
   // Editor fonts are more specfic.
   font-size: 15px;
@@ -20,8 +21,13 @@ html, body {
 }
 
 // Hide icons in the tree sidebar
-.tree-view .icon::before {
-  display: none;
+.nuclide-file-tree-toolbar-container .name.icon::before,
+.tree-view .name.icon::before {
+  // display: none;
+}
+
+.nuclide-file-tree-toolbar-container {
+  background-color: none;
 }
 
 // Give active tab plenty of room
@@ -39,7 +45,7 @@ atom-panel.modal {
 
 // Make code-links plugin underlines more subtle
 body.code-links-visible atom-text-editor::shadow {
-    .code-links .region {
-        border-bottom: thin solid rgba(155,155,255,0.4) ;
-    }
+  .code-links .region {
+    border-bottom: thin solid rgba(155, 155, 255, 0.4);
+  }
 }

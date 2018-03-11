@@ -8,6 +8,7 @@ atom/blob-store/
 atom/storage/
 atom/dev/
 atom/compile-cache/
+atom/recovery/
 atom/.apm/
 .node-gyp/
 .zshenv.local

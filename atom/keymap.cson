@@ -31,8 +31,6 @@
 
   'cmd-l': 'go-to-line:toggle'
 
-  'cmd-\\': 'tree-view:reveal-active-file'
-
 'atom-text-editor.vim-mode:not(.insert-mode)':
   # Replace vim search with lazymotion
   '/': 'lazy-motion:forward-again'
@@ -41,6 +39,8 @@
   'N': 'lazy-motion:backward-again'
 
   ':': 'go-to-line:toggle'
+
+  '=': 'editor:split-selections-into-lines'
 
 'atom-text-editor.lazy-motion':
   'up': 'lazy-motion:set-history-prev'
