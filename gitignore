@@ -6,3 +6,4 @@ jhw.*.html
 *.sublime-project
 *.sublime-workspace
 newrelic_agent.log
+.envrc

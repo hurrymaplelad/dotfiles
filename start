@@ -13,7 +13,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/HomeBrew/install/master/
 brew doctor
 mkdir -p ~/Library/LaunchAgents
 
-brew install git hub nodenv
+brew install git hub nodenv direnv
 brew tap nodenv/nodenv
 brew install nodenv-package-rehash
 
@@ -22,7 +22,7 @@ brew cask install dropbox 1password google-chrome notational-velocity atom slate
 
 # install QuickLook plugins
 # details at https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlstephen qlmarkdown 
+brew cask install qlstephen qlmarkdown
 
 # create projects directory
 mkdir -p ~/Projects
