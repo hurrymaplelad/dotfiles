@@ -18,7 +18,7 @@ brew tap nodenv/nodenv
 brew install nodenv-package-rehash
 
 # install homebrew cask for Mac apps
-brew cask install dropbox 1password google-chrome notational-velocity atom slate
+brew cask install dropbox 1password google-chrome nvalt atom slate
 
 # install QuickLook plugins
 # details at https://github.com/sindresorhus/quick-look-plugins
