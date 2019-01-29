@@ -32,10 +32,13 @@ mkdir -p ~/Projects
 
 # use OSX keychain for git auth
 # https://help.github.com/articles/caching-your-github-password-in-git/
-git config --global credential.helper osxkeychaia
+git config --global credential.helper osxkeychain
 
 # Create a github access token
 open "https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/"
+
+# Install a Powerline Font
+open "./fonts/Inconsolata for Powerline.otf"
 
 # symlink config files
 ln slate ~/.slate
