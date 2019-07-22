@@ -11,7 +11,7 @@ fpath=(~/.zsh/functions $fpath)
 source ~/.zprezto/init.zsh
 
 # direnv
-eval "$(direnv hook zsh)"
+(( $+commands[direnv] )) && eval "$(direnv hook zsh)"
 
 # Bump maximum number of file descriptor for
 # dev tasks watching large repos.
