@@ -50,6 +50,8 @@ ln zpreztorc ~/.zpreztorc
 ln zshenv ~/.zshenv
 ln zshrc ~/.zshrc
 ln -s "`pwd`/zsh" ~/.zsh
-ln -s "`pwd`/zprezto" ~/.zprezto
 ln -s "`pwd`/git_hooks" ~/.git_hooks
 ln -s "`pwd`/atom" ~/.atom
+
+# Clone zprezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
