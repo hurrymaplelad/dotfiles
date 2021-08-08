@@ -64,5 +64,8 @@ eval "$(nodenv init - --no-rehash)"
 # Rehash in the background for faster startup
 (nodenv rehash &) &> /dev/null
 
+# Rust Cargo
+test -d ~/.cargo && source ~/.cargo/env
+
 # Include local overrides
 test -f ~/.zshenv.local && source ~/.zshenv.local
