@@ -36,15 +36,6 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Hom
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
 export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
 
-
-# --------------------
-# Virtual environments
-# --------------------
-# These add to the beginning of the PATH
-eval "$(nodenv init - --no-rehash)"
-# Rehash in the background for faster startup
-(nodenv rehash &) &> /dev/null
-
 # --------------------
 # More Path
 # --------------------
@@ -61,6 +52,14 @@ path=(
   $HOME/.cabal/bin
   $GHC_DOT_APP/Contents/bin
 )
+
+# --------------------
+# Virtual environments
+# --------------------
+# These add to the beginning of the PATH
+eval "$(nodenv init - --no-rehash)"
+# Rehash in the background for faster startup
+(nodenv rehash &) &> /dev/null
 
 # Include local overrides
 test -f ~/.zshenv.local && source ~/.zshenv.local
