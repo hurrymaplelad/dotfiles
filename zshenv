@@ -36,6 +36,9 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Hom
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
 export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
 
+# Prefer local chrome version to avoid repeated large downloads
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
+
 # --------------------
 # More Path
 # --------------------
