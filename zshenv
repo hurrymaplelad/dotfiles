@@ -64,6 +64,13 @@ eval "$(nodenv init - --no-rehash)"
 # Rehash in the background for faster startup
 (nodenv rehash &) &> /dev/null
 
+# --------------------
+# Language environments
+# --------------------
+
+# OCaml opam
+test -r ~/.opam/opam-init/init.zsh && . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
 # Rust Cargo
 test -d ~/.cargo && source ~/.cargo/env
 
