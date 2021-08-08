@@ -57,14 +57,6 @@ path=(
 )
 
 # --------------------
-# Virtual environments
-# --------------------
-# These add to the beginning of the PATH
-eval "$(nodenv init - --no-rehash)"
-# Rehash in the background for faster startup
-(nodenv rehash &) &> /dev/null
-
-# --------------------
 # Language environments
 # --------------------
 

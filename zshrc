@@ -78,3 +78,14 @@ export KEYTIMEOUT=1
 # History
 # -------
 setopt hist_ignore_dups
+
+# --------------------
+# Virtual environments
+# --------------------
+
+# Adds to the beginning of the PATH
+#   Must go in zshrc instead of zshenv to outrank 
+#   MacOS /etc/zprofile
+eval "$(nodenv init - --no-rehash)"
+# Rehash in the background for faster startup
+(nodenv rehash &) &> /dev/null
