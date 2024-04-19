@@ -10,9 +10,6 @@ fpath=(~/.zsh/functions $fpath)
 # prezto
 source ~/.zprezto/init.zsh
 
-# direnv
-(( $+commands[direnv] )) && eval "$(direnv hook zsh)"
-
 # Bump maximum number of file descriptor for
 # dev tasks watching large repos.
 ulimit -n 10000
