@@ -20,13 +20,9 @@ ln zshenv ~/.zshenv
 ln zshrc ~/.zshrc
 ln -s "`pwd`/zsh" ~/.zsh
 
-# Generate an SSH key
-ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
-
 # Install homebrew (also install xcode tools)
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/HomeBrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew doctor
-mkdir -p ~/Library/LaunchAgents
 
 brew install git hub nodenv
 brew tap nodenv/nodenv

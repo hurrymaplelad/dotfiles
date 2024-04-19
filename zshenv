@@ -2,44 +2,26 @@
 # ZSH configuration
 #  - Usually run for every zsh
 #  - This file is committed to dotfiles. 
-#    - Use .zshenv.local for machine specific or sensitive vars
+#  - Use .zprofile or .zshenv.local (not comitted) for machine specific or sensitive vars
 #####################################
+
+# Default text editor
+export EDITOR=/usr/bin/vim
 
 # --------------------
 # Path
 # --------------------
 
+# Add brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # only add things that aren't there
 typeset -U path
 # add more to $PATH as an array
-# add brew first, so we can use it to build the rest of the path
-path=(
-  /usr/local/bin
-  $path
-  /Users/adam/.local/bin # pipx
-)
-
-# Default text editor
-export EDITOR=/usr/bin/vim
-
-# ------------------------------
-# More Path - Homebrew available
-# ------------------------------
-
-# add more to $PATH as an array
 # path=(
+#   /usr/local/bin
 #   $path
 # )
-
-# --------------------
-# Language environments
-# --------------------
-
-# OCaml opam
-test -r ~/.opam/opam-init/init.zsh && . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# Rust Cargo
-test -d ~/.cargo && source ~/.cargo/env
 
 # Include local overrides
 test -f ~/.zshenv.local && source ~/.zshenv.local
