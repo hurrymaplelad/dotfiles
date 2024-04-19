@@ -8,7 +8,6 @@ set -e
 # Do this first in to simplify updating this configuration.
 ln gitconfig ~/.gitconfig
 ln gitignore ~/.gitignore
-ln slate ~/.slate
 ln editorconfig ~/.editorconfig
 ln vimrc ~/.vimrc
 ln zpreztorc ~/.zpreztorc
@@ -30,7 +29,7 @@ brew tap nodenv/nodenv
 brew install nodenv-package-rehash
 
 # Install homebrew cask for Mac apps
-brew cask install dropbox google-chrome nvalt slate visual-studio-code
+brew cask install dropbox google-chrome nvalt visual-studio-code
 
 # Install QuickLook plugins
 # details at https://github.com/sindresorhus/quick-look-plugins
