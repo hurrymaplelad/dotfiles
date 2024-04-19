@@ -4,10 +4,23 @@
 
 set -e
 
-# generate an SSH key
+# Symlink config files
+# Do this first in to simplify updating this configuration.
+ln gitconfig ~/.gitconfig
+ln gitignore ~/.gitignore
+ln slate ~/.slate
+ln editorconfig ~/.editorconfig
+ln vimrc ~/.vimrc
+ln zpreztorc ~/.zpreztorc
+ln zshenv ~/.zshenv
+ln zshrc ~/.zshrc
+ln -s "`pwd`/zsh" ~/.zsh
+ln -s "`pwd`/git_hooks" ~/.git_hooks
+
+# Generate an SSH key
 ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 
-# install homebrew (also install xcode tools)
+# Install homebrew (also install xcode tools)
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/HomeBrew/install/master/install)"
 brew doctor
 mkdir -p ~/Library/LaunchAgents
@@ -16,17 +29,17 @@ brew install git hub nodenv direnv
 brew tap nodenv/nodenv
 brew install nodenv-package-rehash
 
-# install homebrew cask for Mac apps
+# Install homebrew cask for Mac apps
 brew cask install dropbox google-chrome nvalt slate visual-studio-code
 
-# install QuickLook plugins
+# Install QuickLook plugins
 # details at https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlstephen qlmarkdown
 
-# create projects directory
+# Create projects directory
 mkdir -p ~/Projects
 
-# use OSX keychain for git auth
+# Use OSX keychain for git auth
 # https://help.github.com/articles/caching-your-github-password-in-git/
 git config --global credential.helper osxkeychain
 
@@ -35,18 +48,6 @@ open "https://help.github.com/articles/creating-a-personal-access-token-for-the-
 
 # Install a Powerline Font
 open "./fonts/Inconsolata for Powerline.otf"
-
-# symlink config files
-ln slate ~/.slate
-ln gitconfig ~/.gitconfig
-ln gitignore ~/.gitignore
-ln editorconfig ~/.editorconfig
-ln vimrc ~/.vimrc
-ln zpreztorc ~/.zpreztorc
-ln zshenv ~/.zshenv
-ln zshrc ~/.zshrc
-ln -s "`pwd`/zsh" ~/.zsh
-ln -s "`pwd`/git_hooks" ~/.git_hooks
 
 # Clone zprezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
