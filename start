@@ -28,6 +28,10 @@ brew install git hub nodenv direnv
 brew tap nodenv/nodenv
 brew install nodenv-package-rehash
 
+# Install VSCode and extensions
+brew cask install visual-studio-code
+code --install-extension vscodevim.vim
+
 # Install homebrew cask for Mac apps
 brew cask install dropbox google-chrome nvalt visual-studio-code
 

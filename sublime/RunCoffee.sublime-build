@@ -1,5 +1,0 @@
-{
-  "cmd": ["coffee", "$file", "--no-color"],
-  "selector": "source.coffee",
-  "env": {"NOCOLOR": "true"}
-}
