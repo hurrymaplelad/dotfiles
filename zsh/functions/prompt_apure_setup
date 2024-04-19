@@ -33,8 +33,8 @@
 #
 # Prompt rendering
 #
-BRANCH="\ue0a0" # Branch icon supplied by Powerline fonts
-MERCURY="\u263F" # Unicode mercury icon
+# BRANCH="\ue0a0" # Branch icon supplied by Powerline fonts
+# MERCURY="\u263F" # Unicode mercury icon
 PRIMARY_BG=black
 PRIMARY_FG=white
 
@@ -88,30 +88,41 @@ prompt_apure_arrow() {
   print -P "%%{${color}%%}❱❱ $1 ❱${mode_indicator}%%{%f%b%k%%}"
 }
 
-# Renders local path within a project
-prompt_apure_proj_path() {
-  local subdir="./$prompt_apure_vcs_info[subdir]"
-  # Ignore subdir at root of project
-  [[ "$subdir" == "./." ]] && subdir=""
-  # Append trailing space to non-empty subdir
-  [[ -n "$subdir" ]] && subdir="$subdir "
-  print -P "$subdir"
-}
-
 # Renders current branch or bookmark
 prompt_apure_branch() {
   local vcs=$prompt_apure_vcs_info[vcs]
   local branch icon
   if [[ $vcs == "git"* ]]; then
     branch="${prompt_apure_vcs_info[branch]/.../}"
-    icon=$BRANCH
+    icon="ɢɪᴛ"
   elif [[ $vcs == "hg"* ]]; then
     branch="${prompt_apure_vcs_info[misc]}"
-    icon=$MERCURY
+    icon="ʜɢ"
   fi
 
   if [[ -n "$branch" ]]; then
-    print -P "$icon $branch"
+    print -P "$branch"
+  fi
+}
+
+prompt_apure_vcs() {
+  local vcs=$prompt_apure_vcs_info[vcs]
+  local icon
+  if [[ $vcs == "git"* ]]; then
+    icon="ɢɪᴛ"
+  elif [[ $vcs == "hg"* ]]; then
+    icon="ʜɢ"
+  fi
+
+  if [[ -n "$icon" ]]; then
+    print -P "$icon"
+  fi
+}
+
+prompt_apure_action() {
+  local action=$prompt_apure_vcs_info[action] # Rebase, merge, etc
+  if [[ -n "$action" ]]; then
+    print -P "($action) $modified"
   fi
 }
 
@@ -122,30 +133,18 @@ prompt_apure_render() {
   local dir_suffix="%2~" # ZSH prompt syntax for last to dirs of cwd
 
   if [[ -n $vcs ]]; then
-    line1="$(prompt_apure_virtualenv)$(prompt_apure_proj_path)$(prompt_apure_branch)${action}"
+    line1="$(prompt_apure_vcs):$proj $(prompt_apure_virtualenv)$(prompt_apure_branch) $(prompt_apure_action)"
     if [[ -n "$line1" ]]; then
 line1="
 ${line1}"
     fi
 PROMPT="$line1
-$(prompt_apure_arrow $proj) "
+$(prompt_apure_arrow $dir_suffix) "
   else
 PROMPT="
 $(prompt_apure_arrow $dir_suffix) "
   fi
 }
-
-# Potential alternative promp chars
-# ▱▱ master ▱ src/web/styleguide
-#▱ ops-purchase-orders ❱❭
-# ❯
-# ⦔
-#  ▎garbanzo ▎▎master ▎
-# ▱▱ ops-p ▱ master ❱❭
-# ❱❭
-# ▱▰▰▱ ▱▱▱ ▰▰▱▰▰
-# ▏▎▍▏
-
 
 #
 # Hooks

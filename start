@@ -10,11 +10,17 @@ ln gitconfig ~/.gitconfig
 ln gitignore ~/.gitignore
 ln editorconfig ~/.editorconfig
 ln vimrc ~/.vimrc
+ln -s "`pwd`/git_hooks" ~/.git_hooks
+
+# Configure ZSH
+## Install zprezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+## Install a Powerline Font for prompt theme
+open "./fonts/Inconsolata for Powerline.otf"
 ln zpreztorc ~/.zpreztorc
 ln zshenv ~/.zshenv
 ln zshrc ~/.zshrc
 ln -s "`pwd`/zsh" ~/.zsh
-ln -s "`pwd`/git_hooks" ~/.git_hooks
 
 # Generate an SSH key
 ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
@@ -49,8 +55,4 @@ git config --global credential.helper osxkeychain
 # Create a github access token
 open "https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/"
 
-# Install a Powerline Font
-open "./fonts/Inconsolata for Powerline.otf"
 
-# Clone zprezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto

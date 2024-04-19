@@ -31,7 +31,6 @@ alias ls="ls -F"
 
 # Use zsh run-help for detailed help with built in commands
 export HELPDIR=/usr/share/zsh/$ZSH_VERSION/help
-unalias run-help
 autoload -Uz run-help
 alias help=run-help
 alias man=run-help

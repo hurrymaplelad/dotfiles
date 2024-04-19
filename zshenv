@@ -16,19 +16,19 @@ typeset -U path
 path=(
   /usr/local/bin
   $path
+  /Users/adam/.local/bin # pipx
 )
 
 # Default text editor
 export EDITOR=/usr/bin/vim
 
-# --------------------
-# More Path
-# --------------------
+# ------------------------------
+# More Path - Homebrew available
+# ------------------------------
 
 # add more to $PATH as an array
 # path=(
 #   $path
-#   $GHC_DOT_APP/Contents/bin
 # )
 
 # --------------------
