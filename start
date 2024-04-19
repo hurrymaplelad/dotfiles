@@ -33,10 +33,6 @@ code --install-extension vscodevim.vim
 # Install homebrew cask for Mac apps
 brew cask install dropbox google-chrome visual-studio-code
 
-# Install QuickLook plugins
-# details at https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlstephen qlmarkdown
-
 # Create projects directory
 mkdir -p ~/Projects
 
