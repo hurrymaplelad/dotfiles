@@ -23,9 +23,6 @@ export EDITOR=/usr/bin/vim
 # Setup Golang
 export GOPATH="$HOME/Projects/go"
 
-# Re-point `apm develop`
-export ATOM_REPOS_HOME="$HOME/Projects"
-
 # Setup path for Apache Spark installed via Homebrew
 # Should use $(brew --prefix apache-spark)/libexec, but brew --prefix slows down shell startup
 export SPARK_HOME="/usr/local/Cellar/apache-spark/2.0.1/libexec"

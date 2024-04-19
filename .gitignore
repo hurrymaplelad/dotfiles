@@ -1,14 +1,2 @@
-sublime/Package Control.cache
-sublime/Package Control.last-run
-sublime/Package Control.system-ca-bundle
-sublime/CoffeeScript.sublime-settings
-sublime/
-atom/packages/
-atom/blob-store/
-atom/storage/
-atom/dev/
-atom/compile-cache/
-atom/recovery/
-atom/.apm/
 .node-gyp/
 .zshenv.local

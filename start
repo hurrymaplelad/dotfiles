@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Bootstrap a new Mac
-# Derived from Good Eggs developer start: https://github.com/goodeggs/developer-start
 
 set -e
 
@@ -21,7 +20,7 @@ brew install nodenv-package-rehash
 # brew cask install 1password
 
 # install homebrew cask for Mac apps
-brew cask install dropbox google-chrome nvalt atom slate
+brew cask install dropbox google-chrome nvalt slate visual-studio-code
 brew cask install 1password-cli
 
 # install QuickLook plugins
@@ -52,7 +51,6 @@ ln zshenv ~/.zshenv
 ln zshrc ~/.zshrc
 ln -s "`pwd`/zsh" ~/.zsh
 ln -s "`pwd`/git_hooks" ~/.git_hooks
-ln -s "`pwd`/atom" ~/.atom
 
 # Clone zprezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
