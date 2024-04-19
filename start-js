@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Bootstrap Javascript development environment
+
+set -e
+
+N_PREFIX="$HOME/.local"
+
+brew install n
+mkdir -p "$N_PREFIX"
+
+# Add local n dir to PATH
+echo '' >> "$HOME/.zprofile"
+echo '# Created by my dotfiles/start-js for tj/n' >> "$HOME/.zprofile"
+echo "export N_PREFIX=$N_PREFIX" >> "$HOME/.zprofile"
+echo 'path+=("$N_PREFIX/bin")' >> "$HOME/.zprofile"
+echo 'export PATH' >> "$HOME/.zprofile"
+
+source "$HOME/.zprofile"

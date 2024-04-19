@@ -24,7 +24,7 @@ ln -s "`pwd`/zsh" ~/.zsh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew doctor
 
-brew install gh n
+brew install gh
 
 # Install VSCode and extensions
 brew cask install visual-studio-code
