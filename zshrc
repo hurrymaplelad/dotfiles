@@ -10,10 +10,6 @@ fpath=(~/.zsh/functions $fpath)
 # prezto
 source ~/.zprezto/init.zsh
 
-# Bump maximum number of file descriptor for
-# dev tasks watching large repos.
-ulimit -n 10000
-
 # -------
 # Aliases
 # -------
@@ -51,10 +47,6 @@ autoload pls
 # This is a special function name recognized by zsh
 # autoload chpwd
 
-# Easily switch projects
-prj() { cd ~/Projects/$1 }
-compctl -W ~/Projects -/ prj
-
 # Dont offer to correct my typos, I need to learn from the pain of retyping
 setopt nocorrect
 
@@ -75,14 +67,3 @@ export KEYTIMEOUT=1
 # History
 # -------
 setopt hist_ignore_dups
-
-# --------------------
-# Virtual environments
-# --------------------
-
-# Adds to the beginning of the PATH
-#   Must go in zshrc instead of zshenv to outrank 
-#   MacOS /etc/zprofile
-eval "$(nodenv init - --no-rehash)"
-# Rehash in the background for faster startup
-(nodenv rehash &) &> /dev/null
