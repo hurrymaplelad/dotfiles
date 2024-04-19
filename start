@@ -15,8 +15,6 @@ ln -s "`pwd`/git_hooks" ~/.git_hooks
 # Configure ZSH
 ## Install zprezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
-## Install a Powerline Font for prompt theme
-open "./fonts/Inconsolata for Powerline.otf"
 ln zpreztorc ~/.zpreztorc
 ln zshenv ~/.zshenv
 ln zshrc ~/.zshrc
