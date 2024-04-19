@@ -24,9 +24,7 @@ ln -s "`pwd`/zsh" ~/.zsh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew doctor
 
-brew install git hub nodenv
-brew tap nodenv/nodenv
-brew install nodenv-package-rehash
+brew install git hub n
 
 # Install VSCode and extensions
 brew cask install visual-studio-code
