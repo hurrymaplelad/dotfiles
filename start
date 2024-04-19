@@ -31,7 +31,7 @@ brew cask install visual-studio-code
 code --install-extension vscodevim.vim
 
 # Install homebrew cask for Mac apps
-brew cask install dropbox google-chrome nvalt visual-studio-code
+brew cask install dropbox google-chrome visual-studio-code
 
 # Install QuickLook plugins
 # details at https://github.com/sindresorhus/quick-look-plugins
