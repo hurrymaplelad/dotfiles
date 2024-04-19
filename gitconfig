@@ -25,7 +25,5 @@
   ui = true
 [branch]
   autosetupmerge = true
-[credential]
-  helper = osxkeychain
 [rerere]
   enabled = true

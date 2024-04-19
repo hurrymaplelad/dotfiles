@@ -16,12 +16,8 @@ brew install git hub nodenv direnv
 brew tap nodenv/nodenv
 brew install nodenv-package-rehash
 
-# install 1password from the Mac App store to get license
-# brew cask install 1password
-
 # install homebrew cask for Mac apps
 brew cask install dropbox google-chrome nvalt slate visual-studio-code
-brew cask install 1password-cli
 
 # install QuickLook plugins
 # details at https://github.com/sindresorhus/quick-look-plugins
